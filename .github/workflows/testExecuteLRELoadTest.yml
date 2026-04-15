@@ -40,7 +40,7 @@ jobs:
           lre_description: running new yaml test
           lre_server: ${{ secrets.LRE_SERVER }}
           lre_https_protocol: true
-          lre_authenticate_with_token: true
+          lre_authenticate_with_token: false
           lre_domain: oana
           lre_project: proj1
           lre_test: YamlTest/createTestFromYaml.yaml
