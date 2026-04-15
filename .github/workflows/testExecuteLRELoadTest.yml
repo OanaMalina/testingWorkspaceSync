@@ -43,7 +43,7 @@ jobs:
           lre_authenticate_with_token: false
           lre_domain: oana
           lre_project: proj1
-          lre_test: YamlTest/createTestFromYaml.yaml
+          lre_test: 176
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 30
