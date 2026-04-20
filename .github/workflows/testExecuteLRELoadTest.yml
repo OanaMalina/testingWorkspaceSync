@@ -41,9 +41,9 @@ jobs:
           lre_server: ${{ secrets.LRE_SERVER_25 }}
           lre_https_protocol: true
           lre_authenticate_with_token: false
-          lre_domain: DANIEL
-          lre_project: proj1
-          lre_test: 180
+          lre_domain: DEFAULT
+          lre_project: oana
+          lre_test: 227
           lre_test_instance: AUTO
           lre_timeslot_duration_hours: 0
           lre_timeslot_duration_minutes: 30
