@@ -1,4 +1,4 @@
-name: Test My GitHub Action
+name: Test Sync
 on:
   push:
     branches:
