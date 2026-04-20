@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Start syncing workspace with LRE
     env:
-      lre_username: ${{ secrets.LRE_USERNAME }}
-      lre_password: ${{ secrets.LRE_PASSWORD }}
+      lre_username: ${{ secrets.LRE_USERNAME_25 }}
+      lre_password: ${{ secrets.LRE_PASSWORD_25 }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -41,7 +41,7 @@ jobs:
         with:
           lre_action: WorkspaceSync 
           lre_description: Syncing scripts from workspace to LRE
-          lre_server: ${{ secrets.LRE_SERVER }}
+          lre_server: ${{ secrets.LRE_SERVER_25 }}
           lre_https_protocol: true
           lre_authenticate_with_token: false
           lre_domain: oana
