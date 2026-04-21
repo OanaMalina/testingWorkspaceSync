@@ -43,7 +43,7 @@ jobs:
           lre_authenticate_with_token: false
           lre_domain: DEFAULT
           lre_project: oana
-          lre_workspace_dir: ${{ github.workspace }}/scripts
+          lre_workspace_dir: '${{ github.workspace }}/scripts'
           lre_runtime_only: true
           lre_enable_stacktrace: true
       - name: Upload build artifacts
