@@ -41,8 +41,8 @@ jobs:
           lre_server: ${{ secrets.LRE_SERVER_25 }}
           lre_https_protocol: true
           lre_authenticate_with_token: false
-          lre_domain: DANIEL
-          lre_project: proj1
+          lre_domain: DEFAULT
+          lre_project: oana
           lre_workspace_dir: ${{ github.workspace }}/scripts
           lre_runtime_only: true
           lre_enable_stacktrace: true
