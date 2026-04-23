@@ -1,44 +1,48 @@
-name: Synchronize scripts to OpenText Enterprise Performance Engineering
+name: Test Sync
 on:
   push:
     branches:
       - main
     paths:
-      - 'scripts/**'
+      - scripts/**
     tags-ignore:
-      - 'v*.*.*'
+      - v*.*.*
   pull_request:
     branches:
       - main
     paths:
-      - 'scripts/**'
+      - scripts/**
 jobs:
-  workspace-sync:
+  build:
     runs-on: ubuntu-latest
+    name: Start syncing workspace with LRE
     env:
-      lre_username: ${{ secrets.LRE_USERNAME_25 }}
-      lre_password: ${{ secrets.LRE_PASSWORD_25 }}
+      lre_username: '${{ secrets.LRE_USERNAME_25 }}'
+      lre_password: '${{ secrets.LRE_PASSWORD_25 }}'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
-
       - name: Setup Java
         uses: actions/setup-java@v5
         with:
           distribution: adopt
           java-version: '17'
-
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
           node-version: '25'
-
-      - name: Synchronize scripts
+      - name: List _actions directory contents
+        run: ls -R /home/runner/work/_actions
+      - name: Extract CustomScripts.zip
+        run: >
+          unzip -o "${{ github.workspace }}/scripts/CustomScripts.zip" -d "${{
+          github.workspace }}/scripts/CustomScripts"
+      - name: Run My GitHub Action
         uses: MicroFocus/lre-gh-action@v1.0.4
         with:
           lre_action: WorkspaceSync
-          lre_description: synchronize scripts from workspace
-          lre_server: ${{ secrets.LRE_SERVER_25 }}
+          lre_description: Syncing scripts from workspace to LRE
+          lre_server: '${{ secrets.LRE_SERVER_25 }}'
           lre_https_protocol: true
           lre_authenticate_with_token: false
           lre_domain: DEFAULT
