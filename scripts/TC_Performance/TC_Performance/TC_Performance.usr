@@ -1,0 +1,84 @@
+[Actions]
+Lib-View=Lib-View.c
+vuser_init=vuser_init.c
+Action=Action.c
+vuser_end=vuser_end.c
+[ActiveReplay]
+ActiveRunName=
+LastReplayedRunName=
+[CfgFiles]
+"Default Profile"=default.cfg
+[ExtraFiles]
+C-functions.c=
+globals.h=
+JS-functions.js=
+[General]
+ActiveTypes=TruClientWeb
+AdditionalTypes=TruClientWeb
+DefaultCfg=default.cfg
+Description=
+DevelopTool=Vugen
+DisableRegenerate=0
+GenerateTypes=TruClientWeb
+GlobalParameterFile=
+LastActiveAction=Action
+LastModifyVer=12.55.0.911
+MajorVersion=12
+MinorVersion=55
+NewFunctionHeader=1
+ParameterFile=TC_Performance.prm
+ParamLeftBrace={
+ParamRightBrace=}
+RunType=cci
+ScriptLanguage=C
+Type=TruClientWeb
+LastCodeGenerationVer=12.55.0.911
+Encoding=
+ScriptLocale=en-US
+[Interpreters]
+Lib-View=no
+vuser_init=no
+Action=no
+vuser_end=no
+[Modified Actions]
+Lib-View=0
+vuser_init=0
+Action=0
+vuser_end=0
+[Recorded Actions]
+Lib-View=1
+vuser_init=0
+Action=0
+vuser_end=0
+[Rendezvous]
+Rendez_Point1=
+[Replayed Actions]
+Lib-View=0
+vuser_init=0
+Action=0
+vuser_end=0
+[RunLogicFiles]
+"Default Profile"=default.usp
+[StateManagement]
+LastReplayStatus=1
+[Transactions]
+"T00_WholeScript"=
+"T01_Navigate_Empty_page"=
+"T02_Navigate_Many_images"=
+"T03_Navigate_Heavy_images"=
+"T04_Upload_1M_data"=
+"T05_Sleep_10sec"=
+"T06_Sleep_3sec_and_download_ 1MB_by_100K_buffers"=
+"T07_Type_50_characters_with_50ms_interval"=
+"T08_Lists_select"=
+"T09_Run_javascript_onload"=
+"T10_Redirection_by_setTimeout"=
+[TransactionsOrder]
+Order="T00_WholeScript__*delimiter*__T01_Navigate_Empty_page__*delimiter*__T02_Navigate_Many_images__*delimiter*__T03_Navigate_Heavy_images__*delimiter*__T04_Upload_1M_data__*delimiter*__T05_Sleep_10sec__*delimiter*__T06_Sleep_3sec_and_download_ 1MB_by_100K_buffers__*delimiter*__T07_Type_50_characters_with_50ms_interval__*delimiter*__T08_Lists_select__*delimiter*__T09_Run_javascript_onload__*delimiter*__T10_Redirection_by_setTimeout"
+[VisibleActions]
+Lib-View=1
+vuser_init=1
+Action=1
+vuser_end=1
+[VuserProfiles]
+Profiles=Default Profile
