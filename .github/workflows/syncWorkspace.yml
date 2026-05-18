@@ -1,58 +1,117 @@
-name: Test Sync
+name: Test My WorkspaceSync GitHub Action
+
 on:
+
   push:
+
     branches:
+
       - main
+
     paths:
-      - scripts/**
+
+      - 'trigger/triggerSync'
+
+      - 'CustomScripts/**'
+
     tags-ignore:
-      - v*.*.*
+
+      - 'v*.*.*'
+
   pull_request:
+
     branches:
+
       - main
+
     paths:
-      - scripts/**
+
+      - 'trigger/triggerSync'
+
+      - 'CustomScripts/**'
+
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     name: Start syncing workspace with LRE
+
+    permissions:
+
+      contents: read
+
     env:
-      lre_username: '${{ secrets.LRE_USERNAME_25 }}'
-      lre_password: '${{ secrets.LRE_PASSWORD_25 }}'
+
+      lre_username: ${{ secrets.LRE_USERNAME_25 }}
+
+      lre_password: ${{ secrets.LRE_PASSWORD_25 }}
+
     steps:
+
       - name: Checkout code
+
         uses: actions/checkout@v6
+
+        with:
+
+          fetch-depth: 0        # required for incremental WorkspaceSync
+
       - name: Setup Java
+
         uses: actions/setup-java@v5
+
         with:
+
           distribution: adopt
+
           java-version: '17'
+
       - name: Set up Node.js
+
         uses: actions/setup-node@v6
+
         with:
+
           node-version: '25'
+
       - name: List _actions directory contents
-        run: ls -R /home/runner/work/_actions
-      - name: Extract CustomScripts.zip
-        run: >
-          unzip -o "${{ github.workspace }}/scripts/CustomScripts.zip" -d "${{
-          github.workspace }}/scripts/CustomScripts"
-      - name: Run My GitHub Action
-        uses: MicroFocus/lre-gh-action@v1.0.6
+
+        run: 'ls -R /home/runner/work/_actions'
+
+      - name: Run My WorkspaceSync GitHub Action
+
+        uses: MicroFocus/lre-gh-action@v1.0.7
+
         with:
-          lre_action: WorkspaceSync
+
+          lre_action: WorkspaceSync 
+
           lre_description: Syncing scripts from workspace to LRE
-          lre_server: '${{ secrets.LRE_SERVER_25 }}'
+
+          lre_server: ${{ secrets.LRE_SERVER_25 }}
+
           lre_https_protocol: true
-          lre_authenticate_with_token: false
+
+          lre_authenticate_with_token: true
+
           lre_domain: DEFAULT
+
           lre_project: oana
-          lre_workspace_dir: '${{ github.workspace }}/scripts'
+
+          lre_workspace_dir: ${{ github.workspace }}
+
           lre_runtime_only: true
+
           lre_enable_stacktrace: true
-          lre_workspace_sync_success_threshold: 0
+
       - name: Upload build artifacts
+
         uses: actions/upload-artifact@v7
+
         with:
+
           name: build-artifacts
-          path: '${{ github.workspace }}/scripts/logs'
+
+          path: '${{ github.workspace }}/logs'
