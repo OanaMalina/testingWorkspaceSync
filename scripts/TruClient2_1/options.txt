@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IC:\Users\TC\Documents\VuGen\Scripts\TruClient2_1
--IC:\Program Files (x86)\OpenText\LoadRunner\include
--ec:\users\tc\documents\vugen\scripts\truclient2_1\\logfile.log
-c:\users\tc\documents\vugen\scripts\truclient2_1\\combined_TruClient2_1.c
-c:\users\tc\documents\vugen\scripts\truclient2_1\\pre_cci.c
