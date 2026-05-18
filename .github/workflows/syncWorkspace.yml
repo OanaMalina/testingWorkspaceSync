@@ -12,7 +12,7 @@ on:
 
       - 'trigger/triggerSync'
 
-      - 'CustomScripts/**'
+      - 'scripts/**'
 
     tags-ignore:
 
@@ -28,7 +28,7 @@ on:
 
       - 'trigger/triggerSync'
 
-      - 'CustomScripts/**'
+      - 'scripts/**'
 
 jobs:
 
@@ -94,7 +94,7 @@ jobs:
 
           lre_https_protocol: true
 
-          lre_authenticate_with_token: true
+          lre_authenticate_with_token: false
 
           lre_domain: DEFAULT
 
