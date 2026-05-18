@@ -12,7 +12,7 @@ on:
 
       - 'trigger/triggerSync'
 
-      - 'CustomScripts/**'
+      - 'scripts/**'
 
     tags-ignore:
 
@@ -28,7 +28,7 @@ on:
 
       - 'trigger/triggerSync'
 
-      - 'CustomScripts/**'
+      - 'scripts/**'
 
 jobs:
 
