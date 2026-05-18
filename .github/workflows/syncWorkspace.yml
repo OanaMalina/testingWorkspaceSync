@@ -50,7 +50,7 @@ jobs:
           lre_workspace_dir: '${{ github.workspace }}/scripts'
           lre_runtime_only: true
           lre_enable_stacktrace: true
-          lre_workspace_sync_success_threshold: 100
+          lre_workspace_sync_success_threshold: 0
       - name: Upload build artifacts
         uses: actions/upload-artifact@v7
         with:
