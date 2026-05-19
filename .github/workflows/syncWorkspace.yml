@@ -48,6 +48,7 @@ jobs:
       lre_username: ${{ secrets.LRE_USERNAME_25 }}
 
       lre_password: ${{ secrets.LRE_PASSWORD_25 }}
+      GITHUB_TOKEN: ${{ secrets.TOKEN_OANA}} 
 
     steps:
 
