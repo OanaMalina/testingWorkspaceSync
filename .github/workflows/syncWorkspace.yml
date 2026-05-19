@@ -102,11 +102,13 @@ jobs:
 
           lre_project: oana
 
-          lre_workspace_dir: ${{ github.workspace }}
+          lre_workspace_dir: ${{ github.workspace }}/Subject
 
           lre_runtime_only: true
 
           lre_enable_stacktrace: true
+          lre_workspace_sync_success_threshold: 70
+          lre_workspace_sync_delete_removed_scripts: false
 
       - name: Upload build artifacts
 
