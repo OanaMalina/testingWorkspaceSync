@@ -102,7 +102,7 @@ jobs:
 
           lre_project: oana
 
-          lre_workspace_dir: ${{ github.workspace }}/Subject
+          lre_workspace_dir: ${{ github.workspace }}
 
           lre_runtime_only: true
 
