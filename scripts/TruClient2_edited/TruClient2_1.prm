@@ -1,0 +1,10 @@
+[parameter:param1]
+Format="%d"
+OriginalValue=""
+ParamName="param1"
+Type="CurrentIteration"
+[parameter:param2]
+Format="%01s"
+OriginalValue=""
+ParamName="param2"
+Type="Group"
