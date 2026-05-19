@@ -1,0 +1,14 @@
+[parameter:GroupName]
+Format="%s"
+OriginalValue=""
+ParamName="GroupName"
+Type="Group"
+[parameter:IterationNumber]
+BlockSize="10000"
+Format="%01d"
+GenerateNewVal="EachOccurrence"
+OriginalValue=""
+OutOfRangePolicy="ContinueCyclic"
+ParamName="IterationNumber"
+StartValue="5"
+Type="Unique"
