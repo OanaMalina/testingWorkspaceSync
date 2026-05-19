@@ -108,7 +108,7 @@ jobs:
 
           lre_enable_stacktrace: true
           lre_workspace_sync_success_threshold: 70
-          lre_workspace_sync_delete_removed_scripts: false
+          lre_workspace_sync_delete_removed_scripts: true
 
       - name: Upload build artifacts
 
